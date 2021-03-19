@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Usuario } from './clases/usuario';
 
 @Component({
   selector: 'app-root',
@@ -6,31 +7,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Ejercicio 1';
-  edadUno:number =0;
-  edadDos:number =0;
+  title = 'ejercicio2';
 
-  resSuma:number =0;
-  resPromedio:number =0;
+  usuario:Usuario={
+    nombre :"",
+    clave :""
 
-  promedio():void{
-    this.resPromedio = this.resSuma/2;
+  };
+  nombre:string="";
+  clave:string="";
 
+  crear():void{
+    this.usuario.clave = this.clave;
+    this.usuario.nombre = this.nombre;
   }
-  suma():void{
-    this.resSuma= +this.edadUno + +this.edadDos;
-  }
-
-  limpiar():void{
-    this.edadUno= 0;
-    this.edadDos= 0;
-    this.resPromedio= 0;
-    this.resSuma=0
-  }
-  calcular():void{
-    this.suma();
-    this.promedio();
-    
-  }
-
 }

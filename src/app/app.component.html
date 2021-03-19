@@ -1,23 +1,21 @@
-
-<br>
-{{title}}
-
-<form>
-  <label for="edadUno">Edad uno:</label><br>
-  <input [(ngModel)]="edadUno" type="text" id="edadUno" name="edadUno"><br>
-  <label for="edadDos">Edad dos:</label><br>
-  <input [(ngModel)]="edadDos" type="text" id="edadDos" name="edadDos">
-  <br>
-  <br>
-  <br>
-  <button (click) = "calcular()" type="button" name="calcular">calcular </button>
-  <br> <br>
-  <button (click) = "limpiar()" type="button" name="limpiar">limpiar </button><br>
-  <br>
-</form>
-<label for="Promedio">Promedio</label><br>
-<textarea id= "promedio" value="promedio">{{resPromedio}} </textarea><br>
-<label for="Suma">Suma</label><br>
-<textarea id="suma" value="suma">{{resSuma}} </textarea><br>
+<nav>
+  <a class="button" routerLink="/bienvenido">Bienvenido</a> |
+  <a class="button" routerLink="/login">Login</a> |
+  <a class="button" routerLink="/error">Error</a>
+</nav>
 
 <router-outlet></router-outlet>
+<form>
+  <label for="nombre">Nombre:</label><br>
+  <input [(ngModel)]="nombre" type="text" id="nombre" name="nombre"><br>
+  <label for="clave">Clave:</label><br>
+  <input [(ngModel)]="clave" type="text" id="clave" name="clave">
+  <br>
+  <br>
+  <br>
+  <button (click) = "crear()" type="button" name="crear">Crear instancia de la clase usuario</button>
+
+  <br>
+</form>
+
+<h2> {{usuario.nombre}} {{usuario.clave}}</h2>
